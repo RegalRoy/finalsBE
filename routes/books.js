@@ -27,7 +27,7 @@ router.route('/getAbook/:id').get((req,res)=>{
 })
 
 router.route('/delete/:id').delete((req,res)=>{
-    Book.findOneAndDelete(req.params.id).then(r=>{
+    Book.findByIdAndDelete(req.params.id).then(r=>{
         res.json(r)
     }).catch(e=>{
         console.log('error' + e)
